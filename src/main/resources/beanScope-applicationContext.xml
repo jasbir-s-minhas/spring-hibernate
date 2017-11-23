@@ -4,21 +4,11 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--Load properties file: sport.properties-->
-    <context:property-placeholder location="classpath:sport.properties"/>
-
     <bean id="myFortuneService"
           class="com.sdm.spring.poc.HappyFortuneService">
     </bean>
-    <bean id="myHCoach"
-          class="com.sdm.spring.poc.HockeyCoach">
-        <!--setup setter injection -->
-        <property name="fortuneService" ref="myFortuneService"/>
-        <property name="emailAddress" value="${foo.email}"/>
-        <property name="team" value="${foo.team}"/>
-    </bean>
     <bean id="myBCoach"
-          class="com.sdm.spring.poc.BaseballCoach">
+          class="com.sdm.spring.poc.BaseballCoach" scope="prototype">
         <constructor-arg ref="myFortuneService"/>
     </bean>
 
