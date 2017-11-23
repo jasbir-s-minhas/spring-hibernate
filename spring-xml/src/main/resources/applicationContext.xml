@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--Load properties file: sport.properties-->
+    <context:property-placeholder location="classpath:sport.properties"/>
+
+    <bean id="myFortuneService" class="com.sdm.spring.xml.HappyFortuneService">
+    </bean>
+    <bean id="myBCoach" class="com.sdm.spring.xml.BaseballCoach"
+          init-method="init" destroy-method="destroy">
+        <constructor-arg ref="myFortuneService"/>
+        <property name="email" value="${foo.email.BCoach}"/>
+        <property name="team" value="${foo.team.BCoach}"/>
+    </bean>
+    <bean id="myHCoach" class="com.sdm.spring.xml.HockeyCoach"
+          init-method="init" destroy-method="destroy">
+        <property name="fortuneService" ref="myFortuneService"/>
+        <property name="email" value="${foo.email.HCoach}"/>
+        <property name="team" value="${foo.team.HCoach}"/>
+    </bean>
+</beans>
