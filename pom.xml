@@ -11,6 +11,8 @@
     <modules>
         <module>spring-annotations</module>
         <module>spring-xml</module>
+        <module>spring-java-config</module>
+        <module>hibernate</module>
     </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
@@ -18,12 +20,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>3.2.18.RELEASE</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>4.3.11.Final</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>

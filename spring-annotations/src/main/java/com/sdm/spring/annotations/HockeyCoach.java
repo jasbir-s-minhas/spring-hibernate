@@ -2,25 +2,35 @@ package com.sdm.spring.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
+@Scope("prototype")
 public class HockeyCoach implements Coach {
 
     @Autowired
     @Qualifier("happyFortuneService")
     private FortuneService fortuneService;
+    @Value("${foo.email.HCoach}")
     private String email;
+    @Value("${foo.team.HCoach}")
     private String team;
 
     // Spring lifecycle init method
+    @PostConstruct
     public void init(){
-        System.out.println("HockeyCoach->init");
+        System.out.println(">> HockeyCoach->init");
     }
 
     // Spring lifecycle destroy method
+    @PreDestroy
     public void destroy(){
-        System.out.println("HockeyCoach->destroy");
+        System.out.println(">> HockeyCoach->destroy");
     }
 
     public String getDailyWorkout() {

@@ -5,6 +5,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
 public class BaseballCoach implements Coach {
     private FortuneService fortuneService;
@@ -22,13 +25,15 @@ public class BaseballCoach implements Coach {
     }
 
     // Spring lifecycle init method
+    @PostConstruct
     public void init(){
-        System.out.println("BaseballCoach->init");
+        System.out.println(">> BaseballCoach->init");
     }
 
     // Spring lifecycle destroy method
+    @PreDestroy
     public void destroy(){
-        System.out.println("BaseballCoach->destroy");
+        System.out.println(">> BaseballCoach->destroy");
     }
 
     public String getDailyWorkout() {
