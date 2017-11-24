@@ -7,15 +7,15 @@
     <!--Load properties file: sport.properties-->
     <context:property-placeholder location="classpath:sport.properties"/>
 
-    <bean id="myFortuneService" class="com.sdm.spring.xml.HappyFortuneService">
+    <bean id="myFortuneService" class="com.sdm.spring.annotations.HappyFortuneService">
     </bean>
-    <bean id="myBCoach" class="com.sdm.spring.xml.BaseballCoach"
+    <bean id="baseballCoach" class="com.sdm.spring.annotations.BaseballCoach"
           init-method="init" destroy-method="destroy">
         <constructor-arg ref="myFortuneService"/>
         <property name="email" value="${foo.email.BCoach}"/>
         <property name="team" value="${foo.team.BCoach}"/>
     </bean>
-    <bean id="myHCoach" class="com.sdm.spring.xml.HockeyCoach"
+    <bean id="hockeyCoach" class="com.sdm.spring.annotations.HockeyCoach"
           init-method="init" destroy-method="destroy">
         <property name="fortuneService" ref="myFortuneService"/>
         <property name="email" value="${foo.email.HCoach}"/>

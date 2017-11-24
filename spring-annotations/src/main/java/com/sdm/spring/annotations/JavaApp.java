@@ -1,4 +1,4 @@
-package com.sdm.spring.xml;
+package com.sdm.spring.annotations;
 
 public class JavaApp {
     public static void main(String[] args) {

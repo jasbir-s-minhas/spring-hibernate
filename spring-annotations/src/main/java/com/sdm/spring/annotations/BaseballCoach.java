@@ -1,14 +1,23 @@
-package com.sdm.spring.xml;
+package com.sdm.spring.annotations;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class BaseballCoach implements Coach {
     private FortuneService fortuneService;
+    @Value(value = "${foo.email.BCoach}")
     private String email;
+    @Value(value = "${foo.team.BCoach}")
     private String team;
 
     public BaseballCoach() {
     }
 
-    public BaseballCoach(FortuneService fortuneService) {
+    @Autowired
+    public BaseballCoach(@Qualifier("randomFortuneService")FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 

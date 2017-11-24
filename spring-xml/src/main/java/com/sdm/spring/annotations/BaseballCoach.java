@@ -1,26 +1,29 @@
-package com.sdm.spring.xml;
-public class HockeyCoach implements Coach {
+package com.sdm.spring.annotations;
 
+public class BaseballCoach implements Coach {
     private FortuneService fortuneService;
     private String email;
     private String team;
 
+    public BaseballCoach() {
+    }
+
+    public BaseballCoach(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+
     // Spring lifecycle init method
     public void init(){
-        System.out.println("HockeyCoach->init");
+        System.out.println("BaseballCoach->init");
     }
 
     // Spring lifecycle destroy method
     public void destroy(){
-        System.out.println("HockeyCoach->destroy");
+        System.out.println("BaseballCoach->destroy");
     }
 
     public String getDailyWorkout() {
-        return "HockeyCoach workout advise.";
-    }
-
-    public void setFortuneService(FortuneService fortuneService) {
-        this.fortuneService = fortuneService;
+        return "BaseballCoach workout advise.";
     }
 
     public String getDailyFortune() {

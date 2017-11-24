@@ -1,4 +1,4 @@
-package com.sdm.spring.xml;
+package com.sdm.spring.annotations;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,13 +14,13 @@ public class SpringApp {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         //get bean from Spring container
-        Coach coach = context.getBean("myHCoach", Coach.class);
+        Coach coach = context.getBean("hockeyCoach", Coach.class);
         System.out.println("+++++++Hockey Coach Messages++++++++++++");
         System.out.println(coach.toString());
         System.out.println("++++++++++++++++++++++++++++++++++++++++\n");
 
         //get bean from Spring container
-        coach = context.getBean("myBCoach", Coach.class);
+        coach = context.getBean("baseballCoach", Coach.class);
         System.out.println("+++++++Baseball Coach Messages++++++++++");
         System.out.println(coach.toString());
         System.out.println("++++++++++++++++++++++++++++++++++++++++\n");
@@ -32,11 +32,11 @@ public class SpringApp {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("beanScopeApplicationContext.xml");
         // get bean from Spring container
-        Coach coach1 = context.getBean("myBCoach", Coach.class);
-        Coach coach2 = context.getBean("myBCoach", Coach.class);
+        Coach coach1 = context.getBean("baseballCoach", Coach.class);
+        Coach coach2 = context.getBean("baseballCoach", Coach.class);
         scopeTest(coach1, coach2);
-        coach1 = context.getBean("myHCoach", Coach.class);
-        coach2 = context.getBean("myHCoach", Coach.class);
+        coach1 = context.getBean("hockeyCoach", Coach.class);
+        coach2 = context.getBean("hockeyCoach", Coach.class);
         scopeTest(coach1, coach2);
         context.close();
     }

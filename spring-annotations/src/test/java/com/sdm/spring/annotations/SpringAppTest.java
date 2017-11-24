@@ -1,4 +1,4 @@
-package com.sdm.spring.xml;
+package com.sdm.spring.annotations;
 import org.junit.*;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -37,11 +37,11 @@ public class SpringAppTest {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("beanScopeApplicationContext.xml");
         // get bean from Spring container
-        Coach coach1 = context.getBean("myBCoach", Coach.class);
-        Coach coach2 = context.getBean("myBCoach", Coach.class);
+        Coach coach1 = context.getBean("baseballCoach", Coach.class);
+        Coach coach2 = context.getBean("baseballCoach", Coach.class);
         assertEquals(coach1, coach2);
-        coach1 = context.getBean("myHCoach", Coach.class);
-        coach2 = context.getBean("myHCoach", Coach.class);
+        coach1 = context.getBean("hockeyCoach", Coach.class);
+        coach2 = context.getBean("hockeyCoach", Coach.class);
         assertNotSame(coach1, coach2);
         context.close();
     }
