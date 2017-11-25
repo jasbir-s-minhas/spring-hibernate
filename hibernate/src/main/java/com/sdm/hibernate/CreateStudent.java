@@ -21,7 +21,7 @@ public class CreateStudent {
             System.out.println("Creating student");
 
             // Create Student
-            Student student = new Student("Jasbir2", "Minhas2", "jasbir2.minhas@loblaw.ca");
+            Student student = new Student("Jasbir", "Minhas", "jasbir2.minhas@loblaw.ca");
 
             // Start Transaction
             session.beginTransaction();
