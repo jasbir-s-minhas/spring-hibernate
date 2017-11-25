@@ -1,8 +1,12 @@
 package com.sdm.spring.javaConfig;
-import org.junit.*;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotSame;
 
 public class SpringAppTest {
     SpringApp springApp;
@@ -34,8 +38,8 @@ public class SpringAppTest {
     @Test
     public void beanScopeTest() throws Exception {
         // load bean definition from Sprint application config
-        ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("beanScopeApplicationContext.xml");
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(SportConfig.class);
         // get bean from Spring container
         Coach coach1 = context.getBean("baseballCoach", Coach.class);
         Coach coach2 = context.getBean("baseballCoach", Coach.class);
