@@ -20,8 +20,8 @@ public class Main {
 		System.out.println("User count: " + list.size());
 
 		User user = new User();
-		user.setUsername("johndoe");
-		user.setName("John Doe");
+		user.setUsername("jasminh");
+		user.setName("Jasbir Minhas");
 		userManager.insertUser(user);
 		System.out.println("User inserted!");
 
