@@ -13,6 +13,7 @@
         <module>spring-xml</module>
         <module>spring-java-config</module>
         <module>hibernate</module>
+        <module>spring-JPA-Hibernate</module>
     </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
