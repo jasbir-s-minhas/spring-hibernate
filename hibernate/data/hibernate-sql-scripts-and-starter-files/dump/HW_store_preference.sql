@@ -7,6 +7,8 @@ CREATE TABLE HW.store_preference
     VALUE varchar(200),
     DESCRIPTION varchar(200)
 );
+INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_PRN_NON_WAITERS', '0', 'Non-Waiter Print Buffer');
+INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_VER_SKIP', 'N', 'Skip verify state');
 INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_REF_AUTOPROCAUTOREFILL', 'Y', 'Process Automatic Refill Automatically');
 INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_REF_AUTOPROCTRANSFER', 'Y', 'Process Electronic Transfer Automatically');
 INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_REF_INTERCHANGEABLEALLOW', 'Y', 'Interchangeable Allowed on Refill');
@@ -169,10 +171,8 @@ INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_FILL_COUN
 INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_PRN_MONOGRAPHLOGGEDRX', 'N', 'Print Reminder/Monograph for Logged Rx');
 INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_PRN_CHANGED_MONOGRAPH', 'Y', 'Print Changed Reminder/Monograph');
 INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_PRN_FORCENONWAITTOWAIT', '60', 'Number of minutes before a Non-Waiter is forced to become a Waiter');
-INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_PRN_NON_WAITERS', '0', 'Non-Waiter Print Buffer');
 INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_VER_POSTTOPROFILE', 'N', 'Verify Post to Profile');
 INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_VER_DISCONTINUEDRX', 'N', 'Verify Discontinued Rx');
-INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_VER_SKIP', 'N', 'Skip verify state');
 INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_OUT_DEFAULTLOCATION', '10000', 'Default Outbox Location');
 INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_OUT_OVERDUERX', '3', 'Overdue Rx for Pickup (day)');
 INSERT INTO HW.store_preference (CDSP, VALUE, DESCRIPTION) VALUES ('RX_OUT_TPREVERSALCUTOFFWRN', '2', 'TP Reversal Cut-Off Warning (day)');

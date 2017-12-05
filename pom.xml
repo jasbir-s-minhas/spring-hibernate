@@ -14,6 +14,7 @@
         <module>spring-java-config</module>
         <module>hibernate</module>
         <module>spring-JPA-Hibernate</module>
+        <module>spring-mvc-demo</module>
     </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
