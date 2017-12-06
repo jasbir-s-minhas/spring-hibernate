@@ -44,12 +44,12 @@
 	<!-- Create DataSource Bean -->
 	 
 	<beans:bean id="dbDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-    	<beans:property name="jndiName" value="java:comp/env/jdbc/MyLocalDB"/>
+    	<beans:property name="jndiName" value="java:comp/env/jdbc/hwDataSource"/>
 	</beans:bean>
 	 
 	 <!-- using JEE namespace for lookup -->
 	 <!-- 
-	 <jee:jndi-lookup id="dbDataSource" jndi-name="jdbc/MyLocalDB"
+	 <jee:jndi-lookup id="dbDataSource" jndi-name="jdbc/hwDataSource"
    			expected-type="javax.sql.DataSource" />
 	  -->
 	  
