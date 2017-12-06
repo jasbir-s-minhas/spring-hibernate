@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.meri</groupId>
-	<artifactId>org.meri.jpa.tutorial</artifactId>
+	<artifactId>standalone-jpa-test-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>org.meri.jpa.tutorial</name>
+	<name>standalone-jpa-test-demo</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
